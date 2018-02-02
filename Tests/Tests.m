@@ -28,7 +28,7 @@
 - (void)testExample {
     Parser *p = [[Parser alloc] init];
     NSString * query = @"bitcoin";
-    NSInteger count = 3;
+    NSInteger count = 30;
     [p getNewsByFetchingQuery:query withNumberOfResults:count withCompletition:^(NSArray<News *> *news, NSError *error) {
         for (int i = 0; i < [news count]; ++i) {
             NSLog(@"\n\n-%d->>%@<<--\n\n-", i, news[i].description);

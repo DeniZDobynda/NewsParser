@@ -33,7 +33,8 @@
             NSDictionary *dict = response.successData;
             NSString *status = dict[@"status"];
             if (status != NULL && [status isEqualToString:@"ok"]) {
-                NSInteger availableCount = MAX(count, (NSInteger)dict[@"totalResults"]);
+                NSArray<NSDictionary *> *articles = dict[@"articles"];
+                NSInteger availableCount = MIN(count, [articles count]);
                 if ( availableCount > 0 ) {
                 
                     NSMutableArray<News *> *array = [[NSMutableArray alloc] init];
